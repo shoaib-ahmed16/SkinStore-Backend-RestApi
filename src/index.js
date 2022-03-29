@@ -1,7 +1,7 @@
 const express =require("express")
 
 const cartController =require("./controllers/cart.controller.js")
-const {register,login,generateToken}=require("./controllers/register&login.controller")
+const {register,login}=require("./controllers/register&login.controller")
 const productController = require("./controllers/ProductController")
 
 const app = express();
