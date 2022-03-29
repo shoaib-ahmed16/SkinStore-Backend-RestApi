@@ -1,7 +1,6 @@
 const express = require("express")
 
 const cartProd =require("../models/cart.schema.js")
-
 const router = express.Router();
 
 router.get("",async(req,res)=>{
