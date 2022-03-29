@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 
 
 const ProductSchema=mongoose.Schema({
-    ImageUrl :{type:String,required:true},
-    name:{type:String,required:true},
-    price :{type:Number,required:true,},
+    productPic :{type:String,required:true},
+
+    productName:{type:String,required:true},
+    productBrand : {type:String,required:true},
+    priceOfProduct :{type:Number,required:true,},
    
 
 },{
