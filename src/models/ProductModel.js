@@ -7,8 +7,6 @@ const ProductSchema=mongoose.Schema({
     productName:{type:String,required:true},
     productBrand : {type:String,required:true},
     priceOfProduct :{type:Number,required:true},
-   
-
 },{
     timestamps:true,
     versionKey:false
