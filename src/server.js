@@ -1,4 +1,4 @@
-const connect =require("./confique/database.js")
+const connect =require("./configs/database")
 
 const app =require("./index.js")
 
