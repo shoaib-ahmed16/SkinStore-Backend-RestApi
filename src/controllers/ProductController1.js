@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const Product = require("../models/ProductModel");
+const product1= require("../models/ProductModel1.js");
 
 router.get("/", async (req, res) => {
   try {
-    const product = await Product.find().lean().exec();
+    const product = await product1.find().lean().exec();
     res.status(200).send({ Products: product });
   } catch (error) {
     return res.status(404).send("not found");
@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 
 router.post("/", async function (req, res) {
   try {
-    const product = await Product.create(req.body);
+    const product = await product1.create(req.body);
     res.status(200).send({ Products: product });
   } catch (error) {
     return res.status(404).send("not found");
@@ -22,7 +22,7 @@ router.post("/", async function (req, res) {
 
 router.get("/:id", async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id);
+    const product = await product1.findById(req.params.id);
     res.status(200).send({ Products: product });
   } catch (error) {
     return res.status(404).send("not found");
@@ -31,7 +31,7 @@ router.get("/:id", async (req, res) => {
 
 router.patch("/:id", async (req, res) => {
   try {
-    const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+    const product = await product1.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
     res.status(200).send({ Products: product });
@@ -42,7 +42,7 @@ router.patch("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    const product = await Product.findByIdAndDelete(req.params.id);
+    const product = await product1.findByIdAndDelete(req.params.id);
     res.status(200).send({ Products: product });
   } catch (error) {
     return res.status(404).send("not found");
