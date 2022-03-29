@@ -43,7 +43,7 @@ router.patch("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    const product = await Product.findByIdAndDelete(req.params.i);
+    const product = await Product.findByIdAndDelete(req.params.id);
     res.status(200).send({ Products: product });
   } catch (error) {
     return res.status(404).send("not found");
