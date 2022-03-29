@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 module.exports = () => {
   return mongoose.connect(
-    // "mongodb+srv://dhaval:dhaval_123@cluster0.ljuvz.mongodb.net/web15-atlas?retryWrites=true&w=majority"
-    "mongodb://127.0.0.1:27017/authentication"
+    "mongodb+srv://rkvmas:123@cluster0.em4kp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
   );
 };
