@@ -17,7 +17,7 @@ router.get("",async(req,res)=>{
 
 router.post("",async(req,res)=>{
     try{
-        console.log(req.body)
+        // console.log(req.body)
         let cart =await cartProd.create(req.body)
 
         return res.status(200).send({ProductAddTocart:cart})
