@@ -21,7 +21,7 @@ passport.use(new GoogleStrategy({
         email:profile._json.email,
         password:uuidv4(),
         role:"customer",
-        mobileNumber:null
+        mobileNumber:8825203332
       })
     }
     console.log(user)
