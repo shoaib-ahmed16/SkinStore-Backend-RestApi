@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const product1= require("../models/ProductModel1.js");
+const authorization = require("../middleware/Authorization")
 
 router.get("/", async (req, res) => {
   try {
@@ -11,7 +12,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", async function (req, res) {
+router.post("/",authorization(["admin","seller"]), async function (req, res) {
   try {
     const product = await product1.create(req.body);
     res.status(200).send({ Products: product });
@@ -29,7 +30,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.patch("/:id", async (req, res) => {
+router.patch("/:id",authorization(["admin","seller"]), async (req, res) => {
   try {
     const product = await product1.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -40,7 +41,7 @@ router.patch("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id",authorization(["admin","seller"]), async (req, res) => {
   try {
     const product = await product1.findByIdAndDelete(req.params.id);
     res.status(200).send({ Products: product });
