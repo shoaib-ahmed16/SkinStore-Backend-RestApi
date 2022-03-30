@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 
 
-const userSchema=mongoose.Schema({
+const userSchema=new mongoose.Schema({
     name:{type:String,required:true},
     email:{type:String,required:true,unique:true},
     password:{type:String,required:true},
     mobileNumber:{type:Number,required:true,},
     referalCode:{type:String,required:false},
-    role:{type:String,default:["user"]}
+    role:[{type:String,default:"user"}]
 },{
     timestamps:true,
     versionKey:false
@@ -23,10 +23,6 @@ userSchema.pre("save", function(next){
 userSchema.methods.checkPassword = function(password){
     return bcrypt.compareSync(password, this.password);
 }
-
-
-
-
 
 
 const User = mongoose.model("user", userSchema)

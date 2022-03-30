@@ -4,17 +4,17 @@ const authorization =(permissionsdata)=>
    {
      
       const user = req.user
-      let Ispermission = false
+      let isPermission = false
      
       permissionsdata.map(role =>
       {
         if(user.role.includes(role))
         {
-          Ispermission = true
+          isPermission = true
         }
       })
     
-     if(Ispermission)
+     if(isPermission)
      {
         return next();
      }
