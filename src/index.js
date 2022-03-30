@@ -11,6 +11,9 @@ const productController3 = require("./controllers/ProductController3.js")
 
 const addressController =require("./controllers/address.controller.js")
 
+const {register,login,generateToken}=require("./controllers/registerlogin.controller")
+const passport=require("./configs/google-oauth")
+
 const app = express();
 
 app.use(express.json())
@@ -22,6 +25,25 @@ app.use("/product1",productController1)
 app.use("/product2",productController2)
 app.use("/product3",productController3)
 app.use("/address",addressController)
+
+
+
+app.post("/register",register)
+app.post("/login",login)
+
+
+
+
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile','email'] }));
+ 
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login',session:false }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('https://www.skinstore.com');
+    console.log(generateToken())
+  });
 
 
 
