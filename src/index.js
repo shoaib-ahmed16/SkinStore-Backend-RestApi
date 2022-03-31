@@ -1,4 +1,5 @@
-const express =require("express")
+const express =require("express");
+const cors = require("cors")
 
 const userschema =require("./controllers/dummy.user.controller.js")
 
@@ -18,6 +19,8 @@ const {register,login,generateToken}=require("./controllers/registerlogin.contro
 const passport=require("./configs/google-oauth")
 
 const app = express();
+
+app.use(cors())
 
 app.use(express.json())
 
