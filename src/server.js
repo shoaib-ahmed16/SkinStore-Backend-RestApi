@@ -2,7 +2,7 @@ const connect = require('./configs/database.js')
 
 const app = require('./index.js')
 
-app.listen(4969, async (req, res) => {
+app.listen(5000, async (req, res) => {
   try {
     await connect()
 
