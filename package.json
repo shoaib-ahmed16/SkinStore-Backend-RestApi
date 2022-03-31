@@ -18,8 +18,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon src/server.js",
-    "start": "nodemon src/server.js"
+    "server": "nodemon src/index.js",
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
