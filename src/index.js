@@ -54,7 +54,7 @@ app.get(
   }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect('https://www.skinstore.com')
+    res.redirect('https://guileless-custard-2b667a.netlify.app/')
     console.log(generateToken())
   }
 )
