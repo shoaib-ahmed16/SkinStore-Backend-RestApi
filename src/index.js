@@ -14,6 +14,9 @@ const productController1 = require('./controllers/ProductController1.js')
 const productController2 = require('./controllers/ProductController2.js')
 
 const productController3 = require('./controllers/ProductController3.js')
+const productController4 = require('./controllers/ProductController4.js')
+const productController5 = require('./controllers/ProductController5.js')
+const productController6 = require('./controllers/ProductController6.js')
 
 const addressController = require('./controllers/address.controller.js')
 
@@ -36,6 +39,9 @@ app.use('/cartproduct', cartController)
 app.use('/product1', productController1)
 app.use('/product2', productController2)
 app.use('/product3', productController3)
+app.use('/product4', productController4)
+app.use('/product5', productController5)
+app.use('/product6', productController6)
 app.use('/address', addressController)
 
 app.post('/register', register)
